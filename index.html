@@ -34,6 +34,14 @@
 .commission-result{padding:12px 0;border-top:1px solid #e6e2da}
 .commission-result button{border:0;padding:0;background:none;color:#345c47;font-weight:700}
 .commission-result p{margin:4px 0}
+.profile-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.settings-button{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:9px 14px;color:var(--green);font-weight:600}
+.settings-card{border-top:1px solid var(--line);margin-top:18px;padding-top:14px}
+.settings-card h3{font:600 18px var(--serif);margin:0}
+.settings-card p{line-height:1.5}
+.settings-card label{display:block;font-weight:600}
+.settings-card :is(input,select):focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.settings-status{color:var(--green);font-weight:600}
 </style></head><body>
 <div class="space-stars" aria-hidden="true"></div>
 <div class="space-stars-highlight" aria-hidden="true"></div>
@@ -151,14 +159,124 @@ const visibilityGroups = [
 function canView(data,group,audience){
   return audience==='owner'||audience==='follower'||data.visibility?.[group]!=='followers';
 }
+function profileElement(parent,tag,content=''){
+  const element=document.createElement(tag);
+  element.textContent=content;
+  parent.append(element);
+  return element;
+}
+function settingsButton(parent,label,onClick){
+  const button=profileElement(parent,'button',label);
+  button.type='button';
+  button.className='settings-button';
+  button.onclick=onClick;
+  return button;
+}
+function openProfileSettings(section='settings'){
+  const body=document.querySelector('#profileBody');
+  const title=document.querySelector('#profileTitle');
+  const isPrivacy=section==='privacy';
+  title.textContent=isPrivacy?'Privacy and security':'Settings';
+  body.replaceChildren();
+  settingsButton(body,isPrivacy?'Back to settings':'Back to profile',
+    ()=>isPrivacy?openProfileSettings():openProfile(6));
+  if(isPrivacy){
+    renderVisibilitySettings(body);
+    renderDemoPasswordSettings(body);
+  }else{
+    const card=profileElement(body,'section');
+    card.className='settings-card';
+    settingsButton(card,'Privacy and security',()=>openProfileSettings('privacy'));
+    profileElement(card,'p','Choose who can see your profile details and try the password change flow.');
+  }
+  document.querySelector('#profileModal').classList.add('open');
+  body.closest('.modal').scrollTop=0;
+  title.tabIndex=-1;
+  title.focus({preventScroll:true});
+}
+function renderVisibilitySettings(body){
+  const form=profileElement(body,'form');
+  form.className='settings-card';
+  profileElement(form,'h3','Profile visibility');
+  profileElement(form,'p','Choose who can see each part of your profile. Location and commission visibility also apply to discovery.');
+  const savedVisibility=read('at-profile',{}).visibility;
+  for(const [group,label] of visibilityGroups){
+    const field=profileElement(form,'label',label+' visibility');
+    const select=profileElement(field,'select');
+    select.name=group;
+    select.add(new Option('Everyone','public'));
+    select.add(new Option('Followers only','followers'));
+    select.value=savedVisibility?.[group]==='followers'?'followers':'public';
+  }
+  profileElement(form,'button','Save visibility').className='primary';
+  form.onsubmit=event=>{
+    event.preventDefault();
+    const profile=read('at-profile',{});
+    const visibility={...profile.visibility};
+    for(const [group] of visibilityGroups){
+      visibility[group]=form.elements.namedItem(group).value;
+    }
+    save('at-profile',{...profile,visibility});
+    renderFeed();
+    toast('Visibility settings saved');
+  };
+}
+const startingDemoPassword='AtelierDemo2026!';
+let demoPassword=startingDemoPassword;
+function renderDemoPasswordSettings(body){
+  const form=profileElement(body,'form');
+  form.className='settings-card';
+  profileElement(form,'h3','Change password');
+  profileElement(form,'p','Demo only. Use sample passwords here. Changes last until you reload the page.');
+  if(demoPassword===startingDemoPassword){
+    profileElement(form,'p','Starting sample password: '+startingDemoPassword);
+  }
+  const [current,next,confirmation]=['Current password','New password','Confirm new password'].map(label=>{
+    const field=profileElement(form,'label',label);
+    const input=profileElement(field,'input');
+    input.type='password';
+    input.required=true;
+    input.autocomplete='off';
+    return input;
+  });
+  next.minLength=8;
+  profileElement(form,'p','Use at least 8 characters for the new sample password.');
+  profileElement(form,'button','Update demo password').className='primary';
+  const status=profileElement(form,'p');
+  status.className='settings-status';
+  status.setAttribute('role','status');
+  form.oninput=()=>{
+    for(const input of [current,next,confirmation])input.setCustomValidity('');
+    status.textContent='';
+  };
+  form.onsubmit=event=>{
+    event.preventDefault();
+    if(current.value!==demoPassword){
+      current.setCustomValidity('Enter the current sample password.');
+      current.reportValidity();
+      return;
+    }
+    if(next.value===current.value){
+      next.setCustomValidity('Choose a different sample password.');
+      next.reportValidity();
+      return;
+    }
+    if(next.value!==confirmation.value){
+      confirmation.setCustomValidity('The new passwords must match.');
+      confirmation.reportValidity();
+      return;
+    }
+    demoPassword=next.value;
+    form.reset();
+    status.textContent='Demo password updated for this page session.';
+  };
+}
 function openProfile(index,edit=false,audience=index===6?'owner':'public'){
   const mine=index===6, artist=people[index], data=mine?read('at-profile',{}):{};
   const body=document.querySelector('#profileBody');
   body.replaceChildren();
   document.querySelector('#profileTitle').textContent=edit?'Edit artist profile':artist.name;
-  function add(parent,tag,content){
-    const el=document.createElement(tag);el.textContent=content;parent.append(el);return el;
-  }
+  const add=profileElement;
   if(mine && edit){
     const form=document.createElement('form');body.append(form);
     add(form,'p','All fields are optional. Filled contact details and social links appear on your profile.');
@@ -188,19 +306,9 @@ function openProfile(index,edit=false,audience=index===6?'owner':'public'){
     const category=add(categoryLabel,'select','');
     category.innerHTML=interestOptions('Choose a category (optional)');
     category.value=data.commissionCategory||'';
-    add(form,'h3','Profile visibility');
-    add(form,'p','Choose who can see each part of your profile. Location and commission visibility also apply to discovery.');
-    for(const [group,label] of visibilityGroups){
-      const field=add(form,'label',label+' visibility');
-      const select=add(field,'select','');
-      select.name='visibility-'+group;
-      select.add(new Option('Everyone','public'));
-      select.add(new Option('Followers only','followers'));
-      select.value=data.visibility?.[group]==='followers'?'followers':'public';
-    }
     add(form,'button','Save profile').className='primary';
     form.onsubmit=e=>{
-      e.preventDefault();const next={...data};
+      e.preventDefault();const next={...read('at-profile',{})};
       for(const [key] of profileFields){
         const field=form.elements.namedItem(key),value=field.value.trim();
         if(value && key!=='bio'&&!profileLink(key,value)){
@@ -212,8 +320,6 @@ function openProfile(index,edit=false,audience=index===6?'owner':'public'){
         next[key]=form.elements.namedItem(key).value.trim();
       next.commissionOpen=checkbox.checked;
       next.commissionCategory=category.value;
-      next.visibility=Object.fromEntries(visibilityGroups.map(([group])=>
-        [group,form.elements.namedItem('visibility-'+group).value]));
       save('at-profile',next);renderFeed();openProfile(index);toast('Profile saved');
     };
   }else{
@@ -248,8 +354,15 @@ function openProfile(index,edit=false,audience=index===6?'owner':'public'){
         link.href=profileLink(key,data[key]);link.target='_blank';link.rel='noopener noreferrer';
       }
     }
-    if(mine){const btn=add(body,'button','Edit profile');btn.className='primary';btn.onclick=()=>openProfile(index,true)}
-    else {const btn=add(body,'button',read('at-following',[]).includes(index)?'Following':'Follow artist');btn.className='primary';btn.onclick=()=>{toggleFollow(index);openProfile(index)}}
+    if(mine && audience==='owner'){
+      const actions=add(body,'div');
+      actions.className='profile-actions';
+      const btn=add(actions,'button','Edit profile');
+      btn.className='primary';
+      btn.onclick=()=>openProfile(index,true);
+      settingsButton(actions,'Settings',()=>openProfileSettings());
+    }
+    else if(!mine){const btn=add(body,'button',read('at-following',[]).includes(index)?'Following':'Follow artist');btn.className='primary';btn.onclick=()=>{toggleFollow(index);openProfile(index)}}
   }
   showProfileImage(index,edit,true);
   if(edit||canView(data,'cover',audience))showProfileImage(index,edit,false);
