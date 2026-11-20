@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f6f2"><title>Atelier — Artists, in good company</title><link rel="preconnect" href="https://images.unsplash.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1730;--surface:#fff;--ink:#262722;--muted:#85867f;--line:#e9e8e2;--accent:#db5a39;--soft:#f5ece7;--green:#345c47;--sans:'DM Sans',sans-serif;--serif:'Playfair Display',Georgia,serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px var(--sans);min-height:100vh}.space-stars{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:linear-gradient(180deg,#0b1730 0%,#0d1c38 55%,#101d36 100%)}.space-stars:before,.space-stars:after{content:"";position:absolute;inset:-1px;background-repeat:repeat-y;will-change:background-position;pointer-events:none}.space-stars:before{opacity:.44;background-image:radial-gradient(circle at 4% 12%,rgba(255,255,255,0.9) .7px,transparent 1.5px),radial-gradient(circle at 13% 35%,rgba(255,255,255,0.84) .75px,transparent 1.5px),radial-gradient(circle at 23% 74%,rgba(255,255,255,0.96) .65px,transparent 1.5px),radial-gradient(circle at 31% 20%,rgba(255,255,255,0.78) .8px,transparent 1.5px),radial-gradient(circle at 39% 52%,rgba(255,255,255,0.88) .7px,transparent 1.5px),radial-gradient(circle at 48% 87%,rgba(255,255,255,0.9) .75px,transparent 1.5px),radial-gradient(circle at 56% 14%,rgba(255,255,255,0.84) .65px,transparent 1.5px),radial-gradient(circle at 64% 42%,rgba(255,255,255,0.96) .8px,transparent 1.5px),radial-gradient(circle at 72% 76%,rgba(255,255,255,0.78) .7px,transparent 1.5px),radial-gradient(circle at 81% 28%,rgba(255,255,255,0.88) .75px,transparent 1.5px),radial-gradient(circle at 89% 59%,rgba(255,255,255,0.9) .65px,transparent 1.5px),radial-gradient(circle at 97% 91%,rgba(255,255,255,0.84) .8px,transparent 1.5px),radial-gradient(circle at 8% 91%,rgba(255,255,255,0.96) .7px,transparent 1.5px),radial-gradient(circle at 19% 8%,rgba(255,255,255,0.78) .75px,transparent 1.5px),radial-gradient(circle at 28% 47%,rgba(255,255,255,0.88) .65px,transparent 1.5px),radial-gradient(circle at 44% 29%,rgba(255,255,255,0.9) .8px,transparent 1.5px),radial-gradient(circle at 53% 63%,rgba(255,255,255,0.84) .7px,transparent 1.5px),radial-gradient(circle at 69% 96%,rgba(255,255,255,0.96) .75px,transparent 1.5px),radial-gradient(circle at 77% 7%,rgba(255,255,255,0.78) .65px,transparent 1.5px),radial-gradient(circle at 94% 40%,rgba(255,255,255,0.88) .8px,transparent 1.5px),radial-gradient(circle at 18% 67%,rgba(255,255,255,0.84) .75px,transparent 1.5px),radial-gradient(circle at 59% 36%,rgba(255,255,255,0.9) .7px,transparent 1.5px),radial-gradient(circle at 84% 94%,rgba(255,255,255,0.78) .8px,transparent 1.5px),radial-gradient(circle at 2% 44%,rgba(255,255,255,0.84) .75px,transparent 1.5px),radial-gradient(circle at 16% 18%,rgba(255,255,255,0.72) .7px,transparent 1.5px),radial-gradient(circle at 34% 81%,rgba(255,255,255,0.92) .8px,transparent 1.5px),radial-gradient(circle at 45% 8%,rgba(255,255,255,0.78) .65px,transparent 1.5px),radial-gradient(circle at 63% 57%,rgba(255,255,255,0.96) .8px,transparent 1.5px),radial-gradient(circle at 74% 38%,rgba(255,255,255,0.84) .7px,transparent 1.5px),radial-gradient(circle at 87% 7%,rgba(255,255,255,0.9) .75px,transparent 1.5px),radial-gradient(circle at 99% 70%,rgba(255,255,255,0.78) .7px,transparent 1.5px);background-size:100% 640px;animation:stars-rise 78s linear infinite}.space-stars-highlight{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.space-stars-highlight:before{content:"";position:absolute;inset:-1px;pointer-events:none;background-repeat:repeat-y;background-size:100% 930px;background-image:radial-gradient(circle at 12% 68%,rgba(255,255,255,1) 1px,rgba(255,255,255,.48) 1.65px,transparent 2.3px),radial-gradient(circle at 42% 17%,rgba(245,249,255,1) .95px,rgba(245,249,255,.42) 1.6px,transparent 2.25px),radial-gradient(circle at 92% 48%,rgba(255,255,255,1) 1px,rgba(255,255,255,.45) 1.7px,transparent 2.4px),radial-gradient(circle at 30% 79%,rgba(255,255,255,1) 1px,rgba(255,255,255,.48) 1.65px,transparent 2.3px),radial-gradient(circle at 67% 56%,rgba(245,249,255,1) .95px,rgba(245,249,255,.42) 1.6px,transparent 2.25px);opacity:.52;animation:stars-highlight-rise 96s linear infinite}.space-stars:after{opacity:.31;background-image:radial-gradient(circle at 6% 26%,rgba(235,243,255,0.92) .8px,transparent 1.7px),radial-gradient(circle at 17% 81%,rgba(235,243,255,0.86) .9px,transparent 1.7px),radial-gradient(circle at 27% 56%,rgba(235,243,255,0.98) .75px,transparent 1.7px),radial-gradient(circle at 36% 9%,rgba(235,243,255,0.82) .8px,transparent 1.7px),radial-gradient(circle at 46% 42%,rgba(235,243,255,0.92) .9px,transparent 1.7px),radial-gradient(circle at 57% 91%,rgba(235,243,255,0.86) .75px,transparent 1.7px),radial-gradient(circle at 67% 31%,rgba(235,243,255,0.98) .8px,transparent 1.7px),radial-gradient(circle at 75% 66%,rgba(235,243,255,0.82) .9px,transparent 1.7px),radial-gradient(circle at 84% 16%,rgba(235,243,255,0.92) .75px,transparent 1.7px),radial-gradient(circle at 92% 76%,rgba(235,243,255,0.86) .8px,transparent 1.7px),radial-gradient(circle at 3% 61%,rgba(235,243,255,0.98) .9px,transparent 1.7px),radial-gradient(circle at 33% 88%,rgba(235,243,255,0.82) .75px,transparent 1.7px),radial-gradient(circle at 61% 8%,rgba(235,243,255,0.92) .8px,transparent 1.7px),radial-gradient(circle at 98% 48%,rgba(235,243,255,0.86) .9px,transparent 1.7px),radial-gradient(circle at 24% 32%,rgba(235,243,255,0.94) .85px,transparent 1.7px),radial-gradient(circle at 80% 4%,rgba(235,243,255,0.88) .8px,transparent 1.7px);background-size:100% 880px;animation:stars-rise-slow 112s linear infinite}@keyframes stars-rise{from{background-position:0 0}to{background-position:0 -640px}}@keyframes stars-rise-slow{from{background-position:0 0}to{background-position:0 -880px}}@keyframes stars-highlight-rise{from{background-position:0 0}to{background-position:0 -930px}}@media(prefers-reduced-motion:reduce){.space-stars:before,.space-stars:after,.space-stars-highlight:before{animation:none}}button,input,textarea,select{font:inherit}button{cursor:pointer;color:inherit}.topbar{height:66px;position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(15px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(calc((100vw - 1320px)/2),28px);gap:30px}.brand{font:600 25px var(--serif);letter-spacing:-1.2px;white-space:nowrap}.brand i{font-style:normal;color:var(--accent)}.search{height:38px;background:#f5f4f0;border-radius:8px;width:min(390px,36vw);display:flex;align-items:center;gap:9px;padding:0 12px;color:#888}.search input{border:0;background:transparent;outline:0;width:100%;font-size:13px}.top-actions{display:flex;align-items:center;gap:18px}.top-icon{border:0;background:transparent;font-size:19px;position:relative}.top-avatar{width:34px;height:34px;border:2px solid white;box-shadow:0 0 0 1px var(--line);border-radius:50%;background:center/cover url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80')}.layout{position:relative;z-index:1;max-width:1320px;margin:25px auto;padding:0 28px;display:grid;grid-template-columns:205px minmax(0,640px) 290px;gap:24px;align-items:start}.left{position:sticky;top:91px}.sideprofile{padding:17px 15px 15px;background:var(--surface);border:1px solid #d6deea;border-radius:12px;margin-bottom:14px;box-shadow:0 8px 24px rgba(2,8,22,.2)}.sideprofile .cover{height:60px;background:linear-gradient(120deg,#e4b4a2,#e9c276 48%,#6c846c);border-radius:7px;margin-bottom:-22px}.sideprofile .avatar{width:48px;height:48px;border-radius:50%;background:center/cover url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80');border:3px solid white;position:relative}.sideprofile h3{font:500 18px var(--serif);margin:8px 0 2px}.sideprofile p{margin:0;color:var(--muted);font-size:11px}.stats{display:flex;gap:20px;border-top:1px solid var(--line);margin-top:14px;padding-top:11px;color:var(--muted);font-size:10px}.stats b{display:block;color:var(--ink);font-size:14px}.sidenav{padding:6px}.sidenav button{width:100%;background:transparent;border:0;text-align:left;padding:12px 13px;border-radius:8px;color:#d2d9e6;font-weight:500;display:flex;gap:13px;align-items:center}.sidenav button:hover,.sidenav button.active{background:#ffffff1a;color:#fff}.sidenav .ico{font-size:18px;width:20px;text-align:center}.navnote{border-top:1px solid rgba(222,233,250,.22);margin:12px 12px 0;padding:16px 0;color:#b8c5da;font-size:11px;line-height:1.7}.navnote b{color:#fff;display:block;font-size:12px}.feedhead{display:flex;align-items:flex-end;justify-content:space-between;margin:0 2px 16px}.feedhead h1{font:500 29px var(--serif);margin:0;color:#f2f5fb}.feedhead p{color:#b8c5da;font-size:12px;margin:5px 0 0}.feedtabs{display:flex;gap:17px;border-bottom:1px solid rgba(222,233,250,.2);margin-bottom:17px}.feedtabs button{background:none;border:0;color:#aebbd0;padding:0 1px 11px;font-size:12px}.feedtabs button.active{color:#fff;font-weight:700;border-bottom:2px solid #a9c8ff}.compose{background:var(--surface);border:1px solid #d6deea;border-radius:12px;padding:15px;margin-bottom:14px;display:flex;box-shadow:0 8px 24px rgba(2,8,22,.2);align-items:center;gap:11px}.compose .avatar{width:38px;height:38px;border-radius:50%;flex:none;background:center/cover url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80')}.compose button{height:39px;background:#f6f5f1;border:1px solid var(--line);border-radius:22px;flex:1;text-align:left;padding:0 15px;color:#999}.compose button:hover{background:#efeee9}.compose-tools{display:flex;gap:10px;margin-left:auto}.compose-tools button{background:transparent;border:0;padding:6px;font-size:16px}.post{background:var(--surface);border:1px solid #d6deea;border-radius:12px;margin-bottom:15px;overflow:hidden;box-shadow:0 8px 24px rgba(2,8,22,.24)}.posthead{display:flex;align-items:center;padding:15px 16px 12px;gap:10px}.posthead .avatar{width:39px;height:39px;border-radius:50%;background:center/cover;flex:none}.postauthor{flex:1;min-width:0}.postauthor strong{font-size:13px}.verified{color:#4e8565}.postauthor small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.follow{background:transparent;border:0;color:var(--green);font-weight:700;font-size:12px;padding:6px 9px}.follow.following{color:var(--muted)}.more{border:0;background:none;color:#777;font-size:19px}.caption{padding:0 16px 12px;line-height:1.6;font-size:13px}.caption .hashtag{color:#578273}.artwork{position:relative;background:#eee;max-height:620px;display:flex;align-items:center;justify-content:center;overflow:hidden}.artwork img{width:100%;max-height:610px;object-fit:cover;display:block}.artwork.square img{aspect-ratio:1.2;object-fit:cover}.forsale{position:absolute;bottom:13px;left:13px;background:#fffef3ed;padding:9px 12px;border-radius:7px;display:flex;align-items:center;gap:10px;box-shadow:0 3px 15px #0002}.forsale small{color:var(--muted);font-size:10px;display:block}.forsale b{font-size:13px}.forsale button{border:0;background:var(--green);color:white;border-radius:5px;padding:8px 12px;font-size:11px;font-weight:600}.postmeta{display:flex;justify-content:space-between;padding:11px 16px;color:var(--muted);font-size:11px}.postactions{display:flex;border-top:1px solid #f0efea;margin:0 15px;padding:4px 0}.postactions button{background:transparent;border:0;padding:10px 9px;color:#686961;font-size:12px;display:flex;align-items:center;gap:6px}.postactions button:hover{color:var(--accent)}.postactions .liked{color:var(--accent)}.postactions .share{margin-left:auto}.commentbox{display:none;padding:0 16px 14px}.commentbox.open{display:block}.commentlist{font-size:11px;color:#61625b;line-height:1.6;margin-bottom:8px}.commentlist b{color:var(--ink)}.commentinput{display:flex;gap:7px}.commentinput input{flex:1;min-width:0;border:1px solid var(--line);background:#faf9f6;border-radius:20px;padding:8px 12px;font-size:11px;outline:0}.commentinput button{border:0;background:none;color:var(--green);font-weight:700;font-size:11px}.right{position:sticky;top:91px}.widget{background:var(--surface);border:1px solid #d6deea;border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 8px 24px rgba(2,8,22,.2)}.widgethead{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.widgethead h3{font:500 17px var(--serif);margin:0}.widgethead button{border:0;background:none;color:var(--muted);font-size:10px}.trend{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f2f1ec}.trend:last-child{border:0}.trend b{font-size:12px}.trend small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.trend span{color:var(--muted);font-size:10px}.suggest{display:flex;gap:9px;align-items:center;padding:8px 0}.suggest .avatar{width:37px;height:37px;border-radius:50%;background:center/cover;flex:none}.suggest .details{flex:1;min-width:0}.suggest b{display:block;font-size:11px}.suggest small{color:var(--muted);font-size:10px;display:block;margin-top:3px}.suggest button{border:1px solid var(--line);border-radius:15px;background:#fff;padding:5px 9px;color:var(--green);font-size:10px}.interest-note{background:#f4f1ea;border-radius:8px;padding:11px;margin-top:8px;font-size:10px;color:#777}.interest-note b{display:block;color:var(--ink);font-size:11px;margin-bottom:4px}.footerlinks{color:#aebbd0;font-size:10px;line-height:1.9;padding:4px 4px}.modalback{position:fixed;inset:0;z-index:20;background:#18191599;display:none;align-items:center;justify-content:center;padding:18px}.modalback.open{display:flex}.modal{background:var(--surface);width:min(550px,100%);max-height:90vh;overflow:auto;border-radius:14px;padding:22px}.modalhead{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:13px}.modalhead h2{font:500 22px var(--serif);margin:0}.modalhead button{border:0;background:none;font-size:22px}.modalbody{padding:16px 0}.modalbody textarea,.modalbody input,.modalbody select{width:100%;border:1px solid var(--line);border-radius:8px;padding:11px;outline:0;background:#fbfaf7;margin-bottom:10px}.modalbody textarea{height:95px;resize:vertical}.postpreview{display:flex;gap:10px;align-items:center;margin-bottom:12px}.postpreview .avatar{width:37px;height:37px;border-radius:50%;background:center/cover url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80')}.modalfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px}.modalfoot label{font-size:12px;color:#676860;display:flex;gap:7px;align-items:center}.primary{background:var(--green);color:#fff;border:0;border-radius:7px;padding:10px 16px;font-weight:600}.interestgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;max-height:370px;overflow:auto;padding:2px}.interest-tile{border:1px solid var(--line);border-radius:10px;background:#fff;display:flex;align-items:center;gap:10px;padding:10px;text-align:left;min-height:57px;transition:background .15s,border-color .15s,transform .15s}.interest-tile:hover{transform:translateY(-1px);border-color:#c7c8be}.interest-tile.selected{border-color:#6b967b;background:#f1f7f2}.interest-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:9px;background:#f2f0ea;font-size:19px;flex:none}.interest-tile.selected .interest-icon{background:#deebdf}.interest-name{font-size:14px;font-weight:600;line-height:1.2;flex:1}.interest-check{width:20px;height:20px;border:1px solid #d8d8d0;border-radius:50%;display:grid;place-items:center;color:transparent;font-size:12px;flex:none}.interest-tile.selected .interest-check{background:var(--green);border-color:var(--green);color:white}.interest-categories{display:flex;gap:7px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:thin}.interest-categories button{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:18px;padding:8px 12px;font-size:12px;color:#686961}.interest-categories button.active{background:#292b26;color:white;border-color:#292b26}.selected-interests{display:flex;gap:6px;flex-wrap:wrap;margin:7px 0 13px}.selected-interest{border:0;border-radius:16px;background:#eaf1e9;color:#345c47;padding:6px 9px;font-size:12px}.interest-count{font-size:12px;color:#787970;margin:2px 0 9px}.interest-count b{color:var(--ink)}.interest-empty{grid-column:1/-1;color:#888;text-align:center;padding:20px;font-size:12px}.toast{position:fixed;z-index:30;bottom:25px;left:50%;transform:translate(-50%,15px);background:#252720;color:white;border-radius:20px;padding:11px 18px;font-size:12px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}.mobilebar{display:none}
+@media(max-width:1100px){.layout{grid-template-columns:175px minmax(0,640px);max-width:900px}.right{display:none}.topbar{padding:0 25px}}@media(max-width:680px){.interestgrid{grid-template-columns:1fr;max-height:42vh}.interest-tile{min-height:53px}.topbar{height:58px;padding:0 15px;gap:12px}.brand{font-size:22px}.search{width:auto;flex:1}.top-actions{gap:9px}.top-actions .top-icon{display:none}.layout{display:block;margin:17px auto;padding:0 12px}.left{display:none}.feedhead h1{font-size:25px}.feedhead p{font-size:11px}.feedtabs{justify-content:space-around}.post{border-radius:9px}.posthead{padding:13px 12px 10px}.caption{padding:0 12px 10px}.postmeta{padding:10px 12px}.postactions{margin:0 10px}.artwork img{max-height:470px}.mobilebar{display:flex;position:fixed;z-index:6;bottom:0;left:0;right:0;height:58px;background:#fff;border-top:1px solid var(--line);justify-content:space-around;align-items:center}.mobilebar button{border:0;background:none;font-size:20px;color:#777}.mobilebar button.active{color:var(--green)}body{padding-bottom:58px}.modal{padding:17px}.compose-tools{gap:2px}.compose-tools button{font-size:14px}.compose{padding:12px}}
+</style><style>.interest-note{font-size:11px;line-height:1.5}.interest-note b{font-size:12px}.orbit-edit{display:block;border:0;background:none;color:var(--green);font-size:11px;font-weight:700;padding:6px 0 0}</style><style>
+[hidden]{display:none!important}
+@media (min-width:681px){
+  .layout{--sidebar-layout-width:1320px;--sidebar-width:205px}
+  .layout > main{grid-column:2}
+  .layout > .left{
+    position:fixed;
+    top:91px;
+    left:max(28px, calc((100% - var(--sidebar-layout-width)) / 2 + 28px));
+    width:var(--sidebar-width);
+    max-height:calc(100vh - 103px);
+    overflow-y:auto;
+    scrollbar-width:thin;
+  }
+}
+@media (681px <= width <= 1100px){
+  .layout{--sidebar-layout-width:900px;--sidebar-width:175px}
+}
+@media (min-width:681px) and (max-height:740px){
+  .left .sideprofile{padding:12px;margin-bottom:8px}
+  .left .sideprofile .cover{height:48px}
+  .left .sidenav button{padding-block:8px}
+  .left .navnote{margin-top:7px;padding-block:8px}
+}
+.feed-interest-match{font-size:13px;font-weight:600;color:#345c47;margin-bottom:8px}
+.work-status{display:inline-block;margin-bottom:8px;padding:4px 10px;border-radius:12px;background:#e6f2ea;color:#244e37;font-weight:700}
+.work-status[data-progress="true"]{background:#fff1d6;color:#70420a}
+#commissionDirectory input,#commissionDirectory select{display:block;width:100%;margin:8px 0 16px;padding:9px;border:1px solid #dedbd4;border-radius:7px}
+.commission-result{padding:12px 0;border-top:1px solid #e6e2da}
+.commission-result button{border:0;padding:0;background:none;color:#345c47;font-weight:700}
+.commission-result p{margin:4px 0}
+</style></head><body>
+<div class="space-stars" aria-hidden="true"></div>
+<div class="space-stars-highlight" aria-hidden="true"></div>
+<header class="topbar"><div class="brand">atelier<i>.</i></div><label class="search">⌕ <input id="globalSearch" aria-label="Search by artist, artwork or interest" placeholder="Search artists, art & interests" oninput="searchFeed(this.value)"></label><div class="top-actions"><button class="top-icon" aria-label="Messages" title="Messages" onclick="toast('Your artist conversations will live here')"> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle"><path d="M12 4H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6M7 9h4M7 13h2M7 17h6"/><path d="m12 14 1-4 6-6a2 2 0 0 1 3 3l-6 6-4 1Zm5-8 3 3"/></svg></button><button class="top-icon" aria-label="Notifications" title="Notifications" onclick="toast('You’re all caught up')"> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle"><path d="M12 3c-5 0-9 3.6-9 8.5S7 21 12 21h1a2 2 0 0 0 1.4-3.4A1.3 1.3 0 0 1 15.3 15H17a4 4 0 0 0 4-4v-1M7.5 10h.01M9 15h.01M12 7h.01"/><path d="M18 2v6m-3-3h6"/></svg></button><button class="top-avatar" title="Your profile" onclick="openProfile(6)"></button></div></header>
+<div class="layout"><aside class="left"><div class="sideprofile"><div class="cover"></div><div class="avatar"></div><h3>Jamie Rivera</h3><p>Illustrator · Chicago, IL</p><div class="stats"><span><b>18</b>posts</span><span><b>246</b>followers</span><span><b>312</b>following</span></div></div><nav class="sidenav"><button class="active" onclick="setView('For you',this)"><span class="ico">⌂</span>Home feed</button><button onclick="setView('Discover',this);document.querySelector('#globalSearch').focus()"><span class="ico">⌕</span>Discover</button><button onclick="setView('Following',this)"><span class="ico">♡</span>Following</button><button onclick="showMarketplace()"><span class="ico">▧</span>Marketplace</button><button onclick="openInterestModal()"><span class="ico">✳</span>My interests</button><button onclick="openProfile(6)"><span class="ico">◉</span>My profile</button></nav><div class="navnote"><b>Make room for making.</b>Follow artists, share your process, and find work that speaks to you.</div></aside>
+<main><div class="feedhead"><div><h1 id="feedTitle">Your creative feed</h1><p id="feedSubtitle">A little inspiration from your community.</p></div><button class="top-icon" onclick="openPostModal()" title="Create post">＋</button></div><div class="feedtabs"><button class="active" onclick="setFeedTab('For you',this)">For you</button><button onclick="setFeedTab('Following',this)">Following</button><button onclick="setFeedTab('Fresh work',this)">Fresh work</button><button onclick="setFeedTab('Commissions',this)">Commissions</button></div>
+<div class="compose"><div class="avatar"></div><button onclick="openPostModal()">Share something you’re making…</button><div class="compose-tools"><button title="Add artwork" onclick="openPostModal()">▧</button><button title="Sell artwork" onclick="openPostModal(true)">＄</button></div></div><section class="widget" id="commissionDirectory" hidden>
+<h2>Find a commission artist</h2>
+<label for="commissionLocation">Filter by city or region</label>
+<input id="commissionLocation" type="search" placeholder="e.g. Chicago" oninput="renderCommissionDirectory()">
+<label for="commissionInterest">Commission category</label>
+<select id="commissionInterest" onchange="renderCommissionDirectory()"></select>
+<div id="commissionArtists"></div>
+</section><div id="feed"></div></main>
+<aside class="right"><section class="widget"><div class="widgethead"><h3>On your wavelength</h3><button onclick="openInterestModal()">Edit interests</button></div><div id="trends"></div><div class="interest-note"><b>✳ Your creative orbit</b><span id="orbitSummary">Follow interests to find artists who are making things you love.</span><button class="orbit-edit" onclick="openInterestModal()">Tune my orbit</button></div></section><section class="widget"><div class="widgethead"><h3>Artists to know</h3><button onclick="toast('Showing more artists')">See all</button></div><div id="suggestions"></div></section><div class="footerlinks">About · Community guidelines · Privacy · Terms<br>© 2026 Atelier · A community for artists</div></aside></div>
+<nav class="mobilebar"><button aria-label="Marketplace" onclick="showMarketplace()">▧</button><button class="active" onclick="window.scrollTo({top:0,behavior:'smooth'})">⌂</button><button onclick="document.querySelector('#globalSearch').focus()">⌕</button><button onclick="openPostModal()">＋</button><button onclick="openInterestModal()">✳</button><button onclick="openProfile(6)">◉</button></nav>
+<div class="modalback" id="postModal" onclick="if(event.target===this)closeModal('postModal')"><div class="modal"><div class="modalhead"><h2>Share with your community</h2><button onclick="closeModal('postModal')">×</button></div><div class="modalbody"><div class="postpreview"><div class="avatar"></div><div><b>Jamie Rivera</b><div style="font-size:11px;color:#888">Sharing with everyone</div></div></div><textarea id="postText" placeholder="What are you working on? Share a sketch, a finished piece, or a thought…"></textarea><label style="display:flex;align-items:center;gap:8px;border:1px dashed #d7d6ce;border-radius:8px;padding:11px;font-size:12px;color:#777;cursor:pointer;margin-bottom:12px">▧ Add a photo of your work<input id="postImage" type="file" accept="image/*" onchange="handleUpload(this)" style="display:none"></label><div id="uploadPreview" style="display:none;margin-bottom:12px"><img id="uploadImg" style="max-width:100%;max-height:230px;border-radius:8px;object-fit:cover"></div><label>Post status<select id="postStatus"><option value="progress">Work in progress</option><option value="finished" selected>Finished piece</option></select></label><div id="sellFields" style="display:none"><label>Listing label<select id="listingLabel"><option value="sale">For sale</option><option value="inquiry">Available by inquiry</option><option value="commission">Commissions open</option></select></label><input id="workTitle" placeholder="Artwork title"><input id="workPrice" type="number" min="0" step="0.01" placeholder="Price in USD (optional)"></div><select id="postInterest"><option value="">Add an interest tag…</option></select></div><div class="modalfoot"><label><input type="checkbox" id="forSale" onchange="toggleSale(this.checked)"> List this work for sale</label><button class="primary" onclick="createPost()">Share post</button></div></div></div>
+<div class="modalback" id="profileModal" onclick="if(event.target===this)closeModal('profileModal')"><div class="modal"><div class="modalhead"><h2 id="profileTitle">Artist profile</h2><button onclick="closeModal('profileModal')">×</button></div><div class="modalbody" id="profileBody"></div></div></div>
+<div class="modalback" id="interestModal" onclick="if(event.target===this)closeModal('interestModal')"><div class="modal"><div class="modalhead"><h2>Your creative interests</h2><button onclick="closeModal('interestModal')">×</button></div><div class="modalbody"><p style="font-size:12px;color:#777;line-height:1.6;margin-top:0">Choose the things you make or love. Atelier will bring artists with shared interests closer to your feed.</p><label class="search" style="width:100%;margin-bottom:12px">⌕ <input id="interestSearch" placeholder="Find an interest…" oninput="filterInterests(this.value)"></label><div id="interestCategories" class="interest-categories"></div><div id="interestCount" class="interest-count"></div><div id="selectedInterests" class="selected-interests"></div><div class="interestgrid" id="interestGrid"></div></div><div class="modalfoot"><span style="font-size:11px;color:#888">You can change these anytime.</span><button class="primary" onclick="closeModal('interestModal')">Save interests</button></div></div></div><div class="toast" id="toast"></div>
+<script>
+const interests=['Tattooing','Graphic design','Digital art','Clothing design','Illustration','Painting','Photography','Sculpture','Ceramics','Printmaking','Textile art','Fashion styling','Jewelry design','Animation','Motion graphics','3D art','Concept art','Murals','Street art','Calligraphy','Lettering','Art direction','Brand identity','Product design','Interior design','Architecture','Game art','Comics & manga','Mixed media','Collage','Woodworking','Glass art','Metalwork','Fiber arts','Quilting','Embroidery','Creative writing','Music production','Set design','Makeup artistry','Floral design','Book arts','Pottery','Film & video','Creative coding','Restoration','Paper craft','Performance art','Art education','Crafts'];
+const interestIcons={'Tattooing':'🖋️','Graphic design':'▧','Digital art':'✨','Clothing design':'🧵','Illustration':'✏️','Painting':'🎨','Photography':'📷','Sculpture':'🗿','Ceramics':'🏺','Printmaking':'🖨️','Textile art':'🪡','Fashion styling':'👗','Jewelry design':'💎','Animation':'🎞️','Motion graphics':'◉','3D art':'🧊','Concept art':'💭','Murals':'🧱','Street art':'🛹','Calligraphy':'✒️','Lettering':'🔤','Art direction':'🧭','Brand identity':'✳️','Product design':'📐','Interior design':'🪑','Architecture':'🏛️','Game art':'🎮','Comics & manga':'💬','Mixed media':'🧩','Collage':'✂️','Woodworking':'🪵','Glass art':'🪟','Metalwork':'⚒️','Fiber arts':'🧶','Quilting':'🟦','Embroidery':'🪡','Creative writing':'📝','Music production':'🎛️','Set design':'🎭','Makeup artistry':'🪞','Floral design':'💐','Book arts':'📚','Pottery':'🏺','Film & video':'🎥','Creative coding':'⌘','Restoration':'🛠️','Paper craft':'📄','Performance art':'🎭','Art education':'💡','Crafts':'🧰'};
+const interestGroups={'Popular':['Tattooing','Graphic design','Digital art','Illustration','Painting','Photography','Clothing design','Ceramics'],'Visual arts':['Painting','Illustration','Photography','Sculpture','Digital art','Printmaking','Murals','Street art','Collage','Mixed media','Concept art','Comics & manga'],'Design':['Graphic design','Clothing design','Fashion styling','Jewelry design','Art direction','Brand identity','Product design','Interior design','Architecture','Set design'],'Craft & material':['Ceramics','Textile art','Woodworking','Glass art','Metalwork','Fiber arts','Quilting','Embroidery','Pottery','Book arts','Paper craft','Crafts','Restoration'],'Motion & image':['Animation','Motion graphics','3D art','Game art','Film & video','Photography','Creative coding'],'Culture & performance':['Tattooing','Music production','Performance art','Makeup artistry','Floral design','Street art','Art education','Creative writing','Calligraphy','Lettering']};let interestCategory='Popular';
+const people=[{name:'Mara Okafor',role:'Painter · Brooklyn, NY',photo:'photo-1534528741775-53994a69daeb',interests:['Painting','Printmaking','Murals'],verified:true},{name:'Eli Navarro',role:'Digital artist · Los Angeles',photo:'photo-1500648767791-00dcc994a43e',interests:['Digital art','Animation','3D art']},{name:'Yuna Park',role:'Textile artist · Portland',photo:'photo-1531123897727-8f129e1688ce',interests:['Textile art','Clothing design','Embroidery'],verified:true},{name:'Theo Laurent',role:'Photographer · Chicago',photo:'photo-1506794778202-cad84cf45f1d',interests:['Photography','Art direction','Graphic design']},{name:'Nia Bell',role:'Ceramicist · Atlanta',photo:'photo-1524504388940-b1c1722653e1',interests:['Ceramics','Sculpture','Pottery']},{name:'Rafi Chen',role:'Illustrator · Seattle',photo:'photo-1500648767791-00dcc994a43e',interests:['Tattooing','Illustration','Comics & manga']},{name:'Jamie Rivera',role:'Illustrator · Chicago, IL',photo:'photo-1534528741775-53994a69daeb',interests:['Illustration','Graphic design','Printmaking']}];
+const posts=read('at-posts',[{id:1,person:0,time:'18 min',caption:'Been chasing this late afternoon color all week. Finally found it. A new study from the studio ✨',img:'photo-1579783902614-a3fb3927b6a5',likes:128,comments:['That warm edge is everything. — Eli Navarro','The palette! — Yuna Park'],tags:['Painting','Color study']},{id:2,person:2,time:'1 hr',caption:'A little detail from the piece I’ve been hand-stitching between everything else. Nearly ready to let this one go 🌱',img:'photo-1513519245088-0e12902e5a38',likes:86,comments:['The texture is beautiful. — Mara Okafor'],tags:['Textile art','Embroidery'],sale:{title:'Sunday in Bloom',price:260}},{id:3,person:1,time:'3 hr',caption:'Started with a doodle on the train, ended up building a whole tiny world. Process clips are up on my page too.',img:'photo-1541961017774-22349e4a1262',likes:214,comments:['Would happily live here. — Theo Laurent','Love the little details — Nia Bell'],tags:['Digital art','3D art']},{id:4,person:3,time:'Yesterday',caption:'Early walk, no plan, just the camera and the lake. Chicago, you were showing off.',img:'photo-1470252649378-9c29740c9fa8',likes:57,comments:[],tags:['Photography','Chicago'],sale:{title:'After the Rain · archival print',price:180}},{id:5,person:5,time:'Yesterday',caption:'Flash sheet drop ✷ Available for appointments this month. DM for custom sizing and placement.',img:'photo-1513364776144-60967b0f800f',likes:172,comments:['Saving this for later! — Mara Okafor'],tags:['Illustration','Tattooing']}]);
+const image=(id,w=800)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=84`;let activeTab='For you',query='',uploadedImage='';
+function avatar(person,size=100){return read('at-avatar-'+person,'')||image(people[person].photo,size)}function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}function save(key,value){localStorage.setItem(key,JSON.stringify(value))}function toast(msg){let t=document.querySelector('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),2200)}
+const listingLabels = {sale:'For sale', inquiry:'Available by inquiry', commission:'Commissions open'};
+const sampleProgress = new Set([2,3]);
+function profileInterests(){
+  const saved = read('at-interests',['Illustration','Digital art','Photography']);
+  return [...new Set(saved)].filter(interest=>interests.includes(interest)).slice(0,6);
+}
+function matchesSearch(fields){
+  const normalize = value=>String(value??'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+  const term = normalize(query);
+  return !term||fields.some(value=>normalize(value).includes(term));
+}
+function renderFeed(){
+  const directory = activeTab==='Commissions';
+  document.querySelector('#commissionDirectory').hidden = !directory;
+  document.querySelector('#feed').hidden = directory;
+  document.querySelector('.compose').hidden = directory;
+  if(directory){renderCommissionDirectory();return}
+  let liked=read('at-likes',[]),following=read('at-following',[]);let list=posts.filter(p=>{let person=people[p.person],match=matchesSearch([person.name,person.role.split(' · ')[0],commissionInfo(p.person).location,p.caption,p.sale?.title,...p.tags]);let follows=activeTab!=='Following'||following.includes(p.person);return match&&follows&&(activeTab!=='Marketplace'||p.sale)});
+  const sharedByPost = new Map();
+  if(activeTab==='For you'){
+    const selected = profileInterests();
+    for(const post of list){
+      if(post.person===6)continue;
+      sharedByPost.set(post.id,selected.filter(interest=>post.tags.includes(interest)));
+    }
+    list.sort((a,b)=>(sharedByPost.get(b.id)?.length||0)-(sharedByPost.get(a.id)?.length||0));
+  }
+  document.querySelector('#feed').innerHTML=list.map(p=>{
+    const shared = sharedByPost.get(p.id)||[];
+    let person=people[p.person],isLiked=liked.includes(p.id);return `<article class="post" data-id="${p.id}"><header class="posthead"><div class="avatar" style="background-image:url('${avatar(p.person)}')"></div><div class="postauthor"><button style="border:0;background:none;padding:0;font-weight:700;font-size:13px" onclick="openProfile(${p.person})">${person.name}</button> ${person.verified?'<span class="verified">✦</span>':''}<small>${person.role.split(' · ')[0]} · ${p.time}</small></div>${p.person!==6?`<button class="follow ${following.includes(p.person)?'following':''}" onclick="toggleFollow(${p.person},this)">${following.includes(p.person)?'Following':'＋ Follow'}</button>`:''}<button class="more" onclick="toast('More post options')">···</button></header><div class="caption">${shared.length?`<div class="feed-interest-match">Matches your interests · ${shared.join(' · ')}</div>`:''}<span class="work-status" data-progress="${(p.status|| (sampleProgress.has(p.id)?'progress':'finished'))==='progress'}">${(p.status|| (sampleProgress.has(p.id)?'progress':'finished'))==='progress'?'Work in progress':'Finished piece'}</span><div>${p.caption}</div><div style="margin-top:6px">${p.tags.map(t=>`<span class="hashtag">#${t.replaceAll(' ','')}</span> `).join('')}</div></div><div class="artwork"><img src="${p.img?.startsWith('data:image/jpeg;base64,')?p.img:image(p.img,1000)}" alt="Artwork shared by ${person.name}">${p.sale?`<div class="forsale"><div><small>${listingLabels[p.sale.label]||listingLabels.sale}</small><b>${p.sale.title}${p.sale.price>0?' · $'+p.sale.price:''}</b></div><button onclick="openProfile(${p.person})">${p.sale.label==='commission'?'Ask about a commission':'Ask about the piece'}</button></div>`:''}</div><div class="postmeta"><span>${p.likes+(isLiked?1:0)} appreciations</span><span onclick="toggleComments(${p.id})" style="cursor:pointer">${p.comments.length} comments</span></div><div class="postactions"><button class="${isLiked?'liked':''}" onclick="toggleLike(${p.id},this)">${isLiked?'♥':'♡'} Appreciate</button><button onclick="toggleComments(${p.id})">◯ Comment</button><button class="share" onclick="toast('Post link copied')">↗ Share</button><button onclick="toggleBookmark(${p.id},this)">♧ Save</button></div><div class="commentbox" id="comments-${p.id}"><div class="commentlist">${p.comments.map(c=>`<div>${c.replace(' — ',' <b>— ').replace(/$/, '</b>')}</div>`).join('')}</div><div class="commentinput"><input placeholder="Add a thoughtful comment…" onkeydown="if(event.key==='Enter')addComment(${p.id},this)"><button onclick="addComment(${p.id},this.previousElementSibling)">Post</button></div></div></article>`}).join('')||'<div class="widget" style="text-align:center;padding:30px;color:#888">No posts found. Follow artists or try another search.</div>'}
+function toggleLike(id,btn){let a=read('at-likes',[]);a=a.includes(id)?a.filter(x=>x!==id):[...a,id];save('at-likes',a);renderFeed()}function toggleFollow(id){let a=read('at-following',[]);a=a.includes(id)?a.filter(x=>x!==id):[...a,id];save('at-following',a);renderFeed();renderSuggestions();toast(a.includes(id)?`Following ${people[id].name}`:`Unfollowed ${people[id].name}`)}function toggleComments(id){document.querySelector(`#comments-${id}`).classList.toggle('open')}function addComment(id,input){if(!input.value.trim())return;let p=posts.find(x=>x.id===id);p.comments.push(`${input.value.trim()} — Jamie Rivera`);save('at-posts',posts);renderFeed();document.querySelector(`#comments-${id}`).classList.add('open')}function toggleBookmark(id){let a=read('at-saved',[]);save('at-saved',a.includes(id)?a.filter(x=>x!==id):[...a,id]);toast(a.includes(id)?'Removed from saved posts':'Saved for later')}
+function renderTrends(){let selected=profileInterests();let counts={'Illustration':'2.4k posts','Digital art':'1.8k posts','Photography':'1.2k posts','Textile art':'860 posts','Tattooing':'720 posts','Ceramics':'640 posts'};document.querySelector('#trends').innerHTML=(selected.length?selected.slice(0,3):['Illustration','Digital art','Photography']).map((x,i)=>`<div class="trend"><div><b>#${x.replaceAll(' ','')}</b><small>${counts[x]||'New conversations'}</small></div><span>0${i+1}</span></div>`).join('')}
+function renderSuggestions(){let following=read('at-following',[]),selected=profileInterests();document.querySelector('#suggestions').innerHTML=people.map((p,i)=>({p,i,score:p.interests.filter(x=>selected.includes(x)).length})).filter(x=>x.score>0&&!following.includes(x.i)&&x.i!==6).sort((a,b)=>b.score-a.score).slice(0,3).map(({p,i,score})=>`<div class="suggest"><div class="avatar" style="background-image:url('${avatar(i)}')"></div><div class="details"><b>${p.name}${p.verified?' ✦':''}</b><small>${score} shared interest${score>1?'s':''}</small></div><button onclick="toggleFollow(${i})">Follow</button></div>`).join('')||'<small style="color:#888">You’re following everyone here. Explore more artists.</small>'}
+function setFeedTab(tab,btn){activeTab=tab;document.querySelectorAll('.feedtabs button').forEach(x=>x.classList.toggle('active',x===btn));document.querySelector('#feedTitle').textContent=tab==='Commissions'?'Commissions':tab==='Following'?'Your following feed':tab==='Fresh work'?'Fresh work':'Your creative feed';document.querySelector('#feedSubtitle').textContent=tab==='Commissions'?'Find artists open to custom work.':'A little inspiration from your community.';renderFeed()}function setView(view,btn){document.querySelectorAll('.sidenav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');if(view==='Following'){setFeedTab('Following',document.querySelectorAll('.feedtabs button')[1])}else if(view==='Discover'){document.querySelector('#feedTitle').textContent='Discover artists & ideas';setFeedTab('For you',document.querySelectorAll('.feedtabs button')[0])}else{setFeedTab('For you',document.querySelectorAll('.feedtabs button')[0])}}function searchFeed(v){query=v.toLowerCase();renderFeed()}function showMarketplace(){activeTab='Marketplace';document.querySelector('#feedTitle').scrollIntoView({block:'center'});document.querySelector('#feedTitle').textContent='The artist marketplace';document.querySelector('#feedSubtitle').textContent='Originals and editions, shared by the artists who made them.';document.querySelectorAll('.feedtabs button').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.feedtabs button')[2].classList.add('active');renderFeed()}
+function openPostModal(sale=false){uploadedImage='';document.querySelector('#uploadPreview').style.display='none';document.querySelector('#postImage').value='';document.querySelector('#postModal').classList.add('open');document.querySelector('#forSale').checked=sale;toggleSale(sale);document.querySelector('#postText').focus()}function handleUpload(input){let f=input.files&&input.files[0];if(!f)return;let reader=new FileReader();reader.onload=()=>{let source=new Image();source.onload=()=>{let scale=Math.min(1,1400/Math.max(source.width,source.height)),canvas=document.createElement('canvas');canvas.width=Math.round(source.width*scale);canvas.height=Math.round(source.height*scale);canvas.getContext('2d').drawImage(source,0,0,canvas.width,canvas.height);uploadedImage=canvas.toDataURL('image/jpeg',.82);document.querySelector('#uploadImg').src=uploadedImage;document.querySelector('#uploadPreview').style.display='block'};source.src=reader.result};reader.readAsDataURL(f)}function toggleSale(checked){document.querySelector('#sellFields').style.display=checked?'block':'none'}function createPost(){let caption=document.querySelector('#postText').value.trim();if(!caption){toast('Add a note about what you’re sharing');return}let sale=document.querySelector('#forSale').checked;let item={id:Date.now(),person:6,time:'Just now',caption,img:uploadedImage||'photo-1549490349-8643362247b5',likes:0,comments:[],tags:[document.querySelector('#postInterest').value||'Studio life'],status:document.querySelector('#postStatus').value,sale:sale?{label:document.querySelector('#listingLabel').value,title:document.querySelector('#workTitle').value||'New original',price:Number(document.querySelector('#workPrice').value)||0}:null};posts.unshift(item);save('at-posts',posts);renderFeed();closeModal('postModal');document.querySelector('#postText').value='';
+document.querySelector('#postStatus').value='finished';
+document.querySelector('#listingLabel').value='sale';
+document.querySelector('#workTitle').value='';
+document.querySelector('#workPrice').value='';
+toast('Your post is live in the community')}
+const profileFields = [
+  ['bio','Artist bio','Tell visitors about your practice'],
+  ['website','Personal website','yourstudio.com'],
+  ['email','Email','you@example.com'],
+  ['phone','Phone','Include your country code'],
+  ['whatsapp','WhatsApp','International number with country code'],
+  ['instagram','Instagram','@handle or profile URL'],
+  ['tiktok','TikTok','@handle or profile URL'],
+  ['x','X','@handle or profile URL'],
+  ['reddit','Reddit','u/username or profile URL'],
+  ['linkedin','LinkedIn','Profile URL or username']
+];
+const socialSites = {
+  instagram:['instagram.com','/'], tiktok:['tiktok.com','/@'],
+  x:['x.com','/'], reddit:['reddit.com','/user/'], linkedin:['linkedin.com','/in/']
+};
+function profileLink(key,value){
+  if(!value || key==='bio') return '';
+  if(key==='email') return /^[^ @]+@[^ @]+[.][^ @]+$/.test(value)?'mailto:'+encodeURIComponent(value):'';
+  if(key==='phone'||key==='whatsapp'){
+    const digits=value.replace(/[^0-9]/g,'');
+    if(!/^[+0-9 ().-]+$/.test(value)||digits.length<7||digits.length>15)return '';
+    return key==='phone'?'tel:'+(value.startsWith('+')?'+':'')+digits:'https://wa.me/'+digits;
+  }
+  const site=socialSites[key];
+  if(site && !value.includes('.') && !value.includes('://')){
+    const handle=value.replace(/^@|^u\//,'');
+    if(/^[a-z0-9_-]+$/i.test(handle))return 'https://'+site[0]+site[1]+handle;
+  }
+  if(site && !value.includes('/') && /^[\w.-]+$/.test(value.replace(/^@/,'')))
+    return 'https://'+site[0]+site[1]+value.replace(/^@/,'');
+  try{
+    const u=new URL(value.includes('://')?value:'https://'+value);
+    if(!['http:','https:'].includes(u.protocol)||u.username||u.password||!u.hostname.includes('.'))return '';
+    if(site){
+      const host=u.hostname.replace(/^www[.]/,'');
+      if(host!==site[0] && !(key==='x'&&host==='twitter.com')) return '';
+      if(u.pathname==='/')return '';
+    }
+    return u.href;
+  }catch{return ''}
+}
+const visibilityGroups = [
+  ['bio','Bio'], ['interests','Creative interests'], ['location','Location'],
+  ['contact','Contact details'], ['social','Social accounts'],
+  ['commissions','Commission details'], ['cover','Cover artwork']
+];
+function canView(data,group,audience){
+  return audience==='owner'||audience==='follower'||data.visibility?.[group]!=='followers';
+}
+function openProfile(index,edit=false,audience=index===6?'owner':'public'){
+  const mine=index===6, artist=people[index], data=mine?read('at-profile',{}):{};
+  const body=document.querySelector('#profileBody');
+  body.replaceChildren();
+  document.querySelector('#profileTitle').textContent=edit?'Edit artist profile':artist.name;
+  function add(parent,tag,content){
+    const el=document.createElement(tag);el.textContent=content;parent.append(el);return el;
+  }
+  if(mine && edit){
+    const form=document.createElement('form');body.append(form);
+    add(form,'p','All fields are optional. Filled contact details and social links appear on your profile.');
+    for(const [key,label,hint] of profileFields){
+      const field=add(form,'label',label);
+      const input=add(field,key==='bio'?'textarea':'input','');
+      input.placeholder=hint;input.name=key;input.value=data[key]||'';
+      if(key!=='bio')input.type=key==='email'?'email':'text';
+      input.oninput=()=>input.setCustomValidity('');
+    }
+    add(form,'h3','Location and commissions');
+    for(const [key,label,hint] of [
+      ['location','Location','City, region, or country'],
+      ['commissionServices','Work you take on','e.g. Portraits and album covers'],
+      ['commissionBudget','Typical price range','e.g. From $150'],
+      ['commissionTiming','Typical turnaround','e.g. 2–4 weeks']
+    ]){
+      const field=add(form,'label',label);
+      const input=add(field,'input','');
+      input.name=key;input.placeholder=hint;input.value=data[key]||'';input.maxLength=140;
+    }
+    const availability=add(form,'label','Open for commissions');
+    const checkbox=add(availability,'input','');
+    checkbox.type='checkbox';checkbox.name='commissionOpen';checkbox.checked=!!data.commissionOpen;
+    checkbox.style.width='auto';
+    const categoryLabel=add(form,'label','Commission category');
+    const category=add(categoryLabel,'select','');
+    category.innerHTML=interestOptions('Choose a category (optional)');
+    category.value=data.commissionCategory||'';
+    add(form,'h3','Profile visibility');
+    add(form,'p','Choose who can see each part of your profile. Location and commission visibility also apply to discovery.');
+    for(const [group,label] of visibilityGroups){
+      const field=add(form,'label',label+' visibility');
+      const select=add(field,'select','');
+      select.name='visibility-'+group;
+      select.add(new Option('Everyone','public'));
+      select.add(new Option('Followers only','followers'));
+      select.value=data.visibility?.[group]==='followers'?'followers':'public';
+    }
+    add(form,'button','Save profile').className='primary';
+    form.onsubmit=e=>{
+      e.preventDefault();const next={...data};
+      for(const [key] of profileFields){
+        const field=form.elements.namedItem(key),value=field.value.trim();
+        if(value && key!=='bio'&&!profileLink(key,value)){
+          field.setCustomValidity('Enter a valid contact or profile address.');field.reportValidity();return;
+        }
+        next[key]=value;
+      }
+      for(const key of ['location','commissionServices','commissionBudget','commissionTiming'])
+        next[key]=form.elements.namedItem(key).value.trim();
+      next.commissionOpen=checkbox.checked;
+      next.commissionCategory=category.value;
+      next.visibility=Object.fromEntries(visibilityGroups.map(([group])=>
+        [group,form.elements.namedItem('visibility-'+group).value]));
+      save('at-profile',next);renderFeed();openProfile(index);toast('Profile saved');
+    };
+  }else{
+    if(mine){
+      const label=add(body,'label','Preview profile as');
+      const select=add(label,'select','');
+      select.add(new Option('Profile owner','owner'));
+      select.add(new Option('Non-follower','public'));
+      select.add(new Option('Follower','follower'));
+      select.value=audience;
+      select.onchange=()=>openProfile(index,false,select.value);
+    }
+    const info=commissionInfo(index,audience);
+    add(body,'p',[artist.role.split(' · ')[0],info.location].filter(Boolean).join(' · '));
+    if(info.commissionOpen){
+      add(body,'h3','Open for commissions');
+      for(const value of [info.commissionCategory,info.commissionServices,info.commissionBudget,info.commissionTiming])
+        if(value)add(body,'p',value);
+    }
+    if(data.bio&&canView(data,'bio',audience))add(body,'p',data.bio);
+    if(canView(data,'interests',audience)){
+      add(body,'h3','Creative interests');
+      add(body,'p',(mine?profileInterests():artist.interests).join(' · ')||'No interests selected yet.');
+    }
+    for(const [heading,fields] of [['Contact',profileFields.slice(1,5)],['Social accounts',profileFields.slice(5)]]){
+      if(!canView(data,heading==='Contact'?'contact':'social',audience))continue;
+      const valid=fields.filter(([k])=>profileLink(k,data[k]));
+      if(!valid.length)continue;
+      add(body,'h3',heading);
+      for(const [key,label] of valid){
+        const row=add(body,'p',''), link=add(row,'a',socialSites[key]?label:label+' · '+data[key]);
+        link.href=profileLink(key,data[key]);link.target='_blank';link.rel='noopener noreferrer';
+      }
+    }
+    if(mine){const btn=add(body,'button','Edit profile');btn.className='primary';btn.onclick=()=>openProfile(index,true)}
+    else {const btn=add(body,'button',read('at-following',[]).includes(index)?'Following':'Follow artist');btn.className='primary';btn.onclick=()=>{toggleFollow(index);openProfile(index)}}
+  }
+  showProfileImage(index,edit,true);
+  if(edit||canView(data,'cover',audience))showProfileImage(index,edit,false);
+  document.querySelector('#profileModal').classList.add('open');
+}
+function closeModal(id){document.querySelector('#'+id).classList.remove('open')}function openInterestModal(){interestCategory='Popular';document.querySelector('#interestSearch').value='';document.querySelector('#interestModal').classList.add('open');renderInterestPicker()}function renderInterestPicker(){let chosen=profileInterests(),q=document.querySelector('#interestSearch').value.trim().toLowerCase(),cats=['Popular',...Object.keys(interestGroups).filter(x=>x!=='Popular'),'All interests'];document.querySelector('#interestCategories').innerHTML=cats.map(c=>`<button class="${c===interestCategory?'active':''}" onclick="setInterestCategory('${c}')">${c}</button>`).join('');let pool=q||interestCategory==='All interests'?interests:(interestGroups[interestCategory]||interests);let list=pool.filter(x=>!q||x.toLowerCase().includes(q));document.querySelector('#interestCount').innerHTML=`<b>${chosen.length} selected</b> of 6 · Select up to six interests`;document.querySelector('#selectedInterests').innerHTML=chosen.map(x=>`<button class="selected-interest" onclick="toggleInterest('${x}')">${interestIcons[x]||'✳'} &nbsp;${x} ×</button>`).join('');document.querySelector('#interestGrid').innerHTML=list.map(x=>`<button class="interest-tile ${chosen.includes(x)?'selected':''}" aria-pressed="${chosen.includes(x)}" onclick="toggleInterest('${x}')"><span class="interest-icon" aria-hidden="true">${interestIcons[x]||'✳'}</span><span class="interest-name">${x}</span><span class="interest-check" aria-hidden="true">✓</span></button>`).join('')||'<div class="interest-empty">No interests match that search.</div>'}function setInterestCategory(c){interestCategory=c;renderInterestPicker()}function toggleInterest(x){let c=profileInterests();if(!c.includes(x)&&c.length>=6){toast('Remove an interest before adding another.');return}c=c.includes(x)?c.filter(y=>y!==x):[...c,x];save('at-interests',c);renderInterestPicker();renderTrends();renderSuggestions();renderFeed()}function saveInterests(){renderTrends();renderSuggestions()}function filterInterests(q){renderInterestPicker()}
+function interestOptions(placeholder){
+  return `<option value="">${placeholder}</option>`+interests.map(x=>`<option>${x}</option>`).join('');
+}
+document.querySelector('#postInterest').innerHTML=interestOptions('Add an interest tag…');
+document.querySelector('#commissionInterest').innerHTML=interestOptions('All categories');
+</script><script>
+function renderOrbitMatches(){const chosen=profileInterests();let orbit=document.querySelector('#orbitMatches');if(!orbit){orbit=document.createElement('div');orbit.id='orbitMatches';document.querySelector('#trends').after(orbit)}const matches=people.map((p,i)=>({p,i,shared:p.interests.filter(x=>chosen.includes(x))})).filter(x=>x.shared.length&&x.i!==6).sort((a,b)=>b.shared.length-a.shared.length).slice(0,2);orbit.innerHTML=matches.length?`<div style="margin:10px 0 4px;font-size:11px;font-weight:700;color:#4d5149">Artists in your orbit</div>${matches.map(({p,i,shared})=>`<div style="display:flex;align-items:center;gap:8px;padding:7px 0"><div class="avatar" style="width:29px;height:29px;border-radius:50%;background:center/cover url('${avatar(i)}')"></div><div style="flex:1;min-width:0"><button style="display:block;border:0;background:none;padding:0;font-size:11px;font-weight:700" onclick="openProfile(${i})">${p.name}</button><small style="color:#81847b;font-size:10px">${shared.join(' · ')}</small></div><button style="border:1px solid #dfe1d9;border-radius:14px;background:white;padding:5px 8px;color:var(--green);font-size:10px" onclick="toggleFollow(${i})">Follow</button></div>`).join('')}`:'<div style="font-size:11px;color:#81847b;margin:10px 0">Choose interests to find artists with a shared practice.</div>'}
+const originalRenderSuggestions=renderSuggestions;renderSuggestions=function(){originalRenderSuggestions();document.querySelectorAll('#suggestions .suggest').forEach(row=>{const name=row.querySelector('b')?.textContent?.replace(' ✦','');const person=people.find(p=>p.name===name);if(!person)return;const chosen=profileInterests();const shared=person.interests.filter(x=>chosen.includes(x));const small=row.querySelector('small');if(small)small.textContent=shared.length?shared.join(' · '):'Creative community'})};
+const originalRenderTrends=renderTrends;renderTrends=function(){originalRenderTrends();const chosen=profileInterests();const summary=document.querySelector('#orbitSummary');if(summary)summary.textContent=chosen.length?`${chosen.length} interests shaping your feed and artist matches.`:'Choose a few interests to shape your feed and artist matches.';renderOrbitMatches()};
+renderTrends();renderSuggestions();
+function commissionInfo(index,audience='public'){
+  if(index===6){
+    const data=read('at-profile',{});
+    return {
+      location:canView(data,'location',audience)?data.location:'',
+      commissionOpen:canView(data,'commissions',audience)&&data.commissionOpen,
+      commissionCategory:data.commissionCategory,
+      commissionServices:data.commissionServices,
+      commissionBudget:data.commissionBudget,
+      commissionTiming:data.commissionTiming
+    };
+  }
+  const location=people[index].role.split(' · ')[1]||'';
+  if(index===0)return {location,commissionOpen:true,commissionServices:'Paintings and print commissions'};
+  if(index===2)return {location,commissionOpen:true,commissionServices:'Custom textile artwork'};
+  return {location};
+}
+function renderCommissionDirectory(){
+  const location=document.querySelector('#commissionLocation').value.trim().toLowerCase();
+  const category=document.querySelector('#commissionInterest').value;
+  const results=document.querySelector('#commissionArtists');
+  results.replaceChildren();
+  people.forEach((artist,index)=>{
+    const info=commissionInfo(index);
+    if(!info.commissionOpen||!(info.location||'').toLowerCase().includes(location))return;
+    const categories = index===6
+      ? (canView(read('at-profile',{}),'interests','public')?profileInterests():[])
+      : artist.interests;
+    const specialties = info.commissionCategory?[info.commissionCategory]:categories;
+    if(category&&!specialties.includes(category))return;
+    if(!matchesSearch([artist.name,info.location,info.commissionServices,...specialties]))return;
+    const row=document.createElement('div');
+    row.className='commission-result';
+    const button=document.createElement('button');
+    button.type='button';button.textContent=artist.name;
+    button.onclick=()=>openProfile(index);
+    const details=document.createElement('p');
+    details.textContent=[info.location,info.commissionCategory,info.commissionServices,info.commissionBudget,info.commissionTiming].filter(Boolean).join(' · ');
+    row.append(button,details);
+    results.append(row);
+  });
+  if(!results.children.length)results.textContent='No commission profiles match these filters.';
+}
+function refreshOwnAvatar(){
+  const photo=avatar(6);
+  document.querySelectorAll('.sideprofile .avatar,.top-avatar,.compose .avatar,.postpreview .avatar')
+    .forEach(el=>el.style.backgroundImage='url("'+photo+'")');
+}
+function showProfileImage(index, edit, portrait) {
+  const body = document.querySelector('#profileBody');
+  const key = (portrait?'at-avatar-':'at-cover-')+index;
+  const cover = portrait?avatar(index):read(key,'');
+  if (!edit && !cover) return;
+  const section = document.createElement('section');
+  const preview = document.createElement('img');
+  preview.alt = portrait?'Artist profile photo':'Artist cover artwork';
+  preview.style.cssText = 'width:100%;aspect-ratio:3/1;object-fit:cover;border-radius:8px;margin-bottom:12px';
+  if(portrait)preview.style.cssText='width:80px;height:80px;object-fit:cover;border-radius:50%;display:block;margin-bottom:12px';
+  preview.hidden = !cover;
+  if (cover) preview.src = cover;
+  section.append(preview);
+  body.prepend(section);
+  if (!edit) return;
+  const label = document.createElement('label');
+  label.textContent = portrait?'Profile photo':'Cover artwork · choose a landscape image';
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  label.append(input);
+  section.append(label);
+  input.onchange = async () => {
+    const file = input.files[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    try {
+      const img = new Image();
+      img.src = url;
+      await img.decode();
+      const canvas = document.createElement('canvas');
+      canvas.width = portrait?400:1200;
+      canvas.height = 400;
+      const scale = Math.max(canvas.width/img.width, canvas.height/img.height);
+      const w = img.width*scale, h = img.height*scale;
+      canvas.getContext('2d').drawImage(img,(canvas.width-w)/2,(canvas.height-h)/2,w,h);
+      const data = canvas.toDataURL('image/jpeg',.82);
+      save(key,data);
+      preview.src = data;
+      preview.hidden = false;
+      if(portrait){refreshOwnAvatar();renderFeed()}
+      else document.querySelector('.sideprofile .cover').style.background = 'center/cover url(' + data + ')';
+      toast(portrait?'Profile photo saved':'Cover artwork saved');
+    } catch { toast('Could not save this image. Try a smaller JPEG or PNG.'); }
+    finally { URL.revokeObjectURL(url); }
+  };
+}
+refreshOwnAvatar();
+const savedCover = read('at-cover-6','');
+if (savedCover) document.querySelector('.sideprofile .cover').style.background = 'center/cover url(' + savedCover + ')';
+renderFeed();
+</script></body></html>
